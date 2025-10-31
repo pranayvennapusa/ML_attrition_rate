@@ -264,7 +264,3 @@ lsof -ti:5000 | xargs kill -9
 netstat -ano | findstr :5000
 taskkill /PID <PID> /F
 ```
-
-## Screenshots
-
-Add screenshots of your application here once deployed.
