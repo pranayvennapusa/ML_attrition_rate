@@ -1,0 +1,108 @@
+Employee Attrition Prediction System: Technical Documentation
+1. Overview
+This documentation describes a machine learning–based employee attrition prediction system implemented with Python and Flask, utilizing the IBM HR Analytics Employee Attrition dataset. The system enables HR teams to forecast employee turnover, understand underlying causes, and take proactive retention actions.
+
+2. System Architecture
+Frontend: Web-based interface for HR users; form inputs for employee attributes (e.g., age, tenure, satisfaction, overtime status)
+
+Backend: Flask API serving ML models, hosting endpoints for predictions, model info, and recommendations
+
+ML Model: Trained Random Forest (or ensemble) classifier on IBM HR Attrition data; interpretable via SHAP/LIME for feature importance
+
+Modules:
+
+Data preprocessing: Missing value handling, encoding, normalization
+
+Prediction API: Receives user input and returns attrition probability, contributing factors, and tailored recommendations
+
+Dashboard: Visualizes employee risk levels and model performance metrics
+
+3. Data Description
+Dataset Used: IBM HR Analytics Employee Attrition dataset
+
+30+ features (Age, Department, Job Satisfaction, Monthly Income, Overtime, etc.)
+
+Download dataset from Kaggle
+
+4. Data Pipeline & Processing
+Cleaning: Remove/Impute missing values (mean/median/KNN)
+
+Encoding: One-hot encode categorical fields (department, job role)
+
+Scaling: Normalize numeric values (income, years)
+
+Feature Engineering: Create new relevant features (work-life index, promotion rate)
+
+Balancing: SMOTE used for class imbalance
+
+5. Model Training
+Algorithm: Random Forest (can be replaced with Logistic Regression, XGBoost, SVM, Ensemble models)
+
+Train/Test split: 80/20
+
+Hyperparameter tuning: GridSearchCV
+
+Metrics: Accuracy, Precision, Recall, F1-score, ROC-AUC
+
+Explainability: SHAP for feature impact scoring
+
+6. API Endpoints
+Endpoint	Method	Description
+/	GET	Loads web dashboard
+/predict	POST	Accepts employee data, returns risk score, explanations
+/model-info	GET	Provides model accuracy, features list, sample outputs
+7. Output Description
+Attrition Probability: 
+0
+ to 
+1
+0 to 1 or percentage
+
+Risk Level: HIGH, MEDIUM, LOW
+
+Contributing Factors: List with impact scores
+
+Recommendations: 2–5 tailored retention actions
+
+Dashboard Metrics: Overall performance, usage logs
+
+8. Deployment
+Deployed using Gunicorn, can be containerized with Docker
+
+Supports cloud platforms (Heroku, AWS, Azure, GCP)
+
+9. Integration Guidance
+Can be embedded in HRMS suites via API
+
+Dashboard can be linked to BI tools for visualization
+
+Security: Role-based API access, data encryption recommended
+
+Architecture Diagram
+text
+         +----------------+
+         |    Frontend    |
+         |   (Web Page)   |
+         +-------+--------+
+                 |
+                 v
+        +--------+---------+
+        |     Flask API    |
+        |  (Backend Logic) |
+        +--------+---------+
+                 |
+                 v
+         +-------+--------+
+         |   ML Model      |
+         | (Random Forest) |
+         +-------+--------+
+                 |
+                 v
+         +----------------+
+         | IBM HR Dataset |
+         +----------------+
+10. References
+IBM HR Analytics Employee Attrition dataset: Kaggle link
+
+For deeper technical research and best practices, refer to https://www.sciencedirect.com/science/article/pii/S0957417425001976
+https://ijirt.org/publishedpaper/IJIRT175440_PAPER.pdf​
