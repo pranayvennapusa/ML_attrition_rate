@@ -51,6 +51,11 @@ Endpoint	Method	Description
 /	GET	Loads web dashboard
 /predict	POST	Accepts employee data, returns risk score, explanations
 /model-info	GET	Provides model accuracy, features list, sample outputs
+| Endpoint    | Method | Description                                             |
+| ----------- | ------ | ------------------------------------------------------- |
+| /           | GET    | Loads web dashboard                                     |
+| /predict    | POST   | Accepts employee data, returns risk score, explanations |
+| /model-info | GET    | Provides model accuracy, features list, sample outputs  |
 7. Output Description
 Attrition Probability: 
 0
@@ -105,4 +110,5 @@ text
 IBM HR Analytics Employee Attrition dataset: Kaggle link
 
 For deeper technical research and best practices, refer to https://www.sciencedirect.com/science/article/pii/S0957417425001976
+
 https://ijirt.org/publishedpaper/IJIRT175440_PAPER.pdf​
