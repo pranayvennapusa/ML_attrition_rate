@@ -239,9 +239,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Your Name - your.email@example.com
+Your Name - Pranay Vennapusa
 
-Project Link: [https://github.com/yourusername/employee-attrition-ml](https://github.com/yourusername/employee-attrition-ml)
+Project Link: [https://github.com/yourusername/employee-attrition-ml](https://github.com/pranayvennapusa/employee-attrition-ml)
 
 ## Troubleshooting
 
